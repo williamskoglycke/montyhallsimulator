@@ -26,16 +26,16 @@ public class MontyHallProblem {
         // Game participant choose random box
         boxes.get(getRandomNumber(numberOfBoxes)).setPicked(true);
 
-        final List<Box> collect = removeOneEmptyBox(boxes);
+        final List<Box> boxesAfterRemoval = removeOneEmptyBox(boxes);
 
         return switch (strategy) {
-            case SWITCH -> collect.stream()
+            case SWITCH -> boxesAfterRemoval.stream()
                         .filter(Box::isNotPicked)
                         .findFirst()
                         .map(box -> box.hasMoney() ? WON : LOST)
                         .orElseThrow(); // Could do a .get() instead, would love some feedback here :)
 
-            case STAY -> collect.stream()
+            case STAY -> boxesAfterRemoval.stream()
                         .filter(Box::isPicked)
                         .findFirst()
                         .map(box -> box.hasMoney() ? WON : LOST)

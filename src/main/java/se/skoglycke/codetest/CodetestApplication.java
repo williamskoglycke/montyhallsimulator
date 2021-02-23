@@ -4,10 +4,11 @@ import se.skoglycke.codetest.montyhall.GameProperties;
 import se.skoglycke.codetest.montyhall.MontyHallProblem;
 import se.skoglycke.codetest.montyhall.Strategy;
 
-import java.util.Optional;
 import java.util.stream.Stream;
 
 import static se.skoglycke.codetest.montyhall.Result.WON;
+import static se.skoglycke.codetest.montyhall.Strategy.STAY;
+import static se.skoglycke.codetest.montyhall.Strategy.SWITCH;
 
 public class CodetestApplication {
 
@@ -32,15 +33,18 @@ public class CodetestApplication {
                 .count();
 
         System.out.printf("""
-                Iterations: %d,
+                Iterations of each: %d,
                 Number of boxes: %d,
                 'Switch' wins: %d
                 'Stay' wins: %d
+                
+                Best strategy: %s
                 """,
                 NUMBER_OF_ITERATIONS,
                 NUMBER_OF_BOXES,
                 switchWins,
-                stayWins);
+                stayWins,
+                (switchWins > stayWins) ? SWITCH : STAY);
     }
 
 }

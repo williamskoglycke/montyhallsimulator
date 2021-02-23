@@ -11,3 +11,6 @@ java -jar target/codetest-1.0.0.jar
 ### Prerequisites
 Java 15 installed
 
+#### TODOS:
+- Send in the number of boxes and number of iterations as arguments
+- Global error handler (Maybe a try/catch is enough)
