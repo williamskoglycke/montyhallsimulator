@@ -1,6 +1,6 @@
 # Monty Hall Simulator
 
-Runs 1000 iterations with 3 boxes and prints the result to the console
+Runs 1000 iterations for each strategy with 3 boxes and prints the result to the console
 
 ## Usage
 ```bash 
